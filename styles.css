@@ -325,3 +325,51 @@ audio::-webkit-media-controls-time-remaining-display {
         font-size: 1rem;
     }
 }
+
+.forest-scene {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(159, 122, 234, 0.1);
+    border-radius: 10px;
+    text-align: left;
+}
+
+.magic-item {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #9f7aea;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.magic-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(159, 122, 234, 0.3);
+}
+
+.conclusion {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background: rgba(159, 122, 234, 0.2);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.conclusion h2 {
+    font-family: 'MedievalSharp', cursive;
+    color: #9f7aea;
+    margin-bottom: 20px;
+}
+
+/* Extend the checkbox hack for new screens */
+#crystal-grove:checked ~ .crystal-grove-screen,
+#whispering-willows:checked ~ .whispering-willows-screen,
+#mystic-stream:checked ~ .mystic-stream-screen,
+#conclusion:checked ~ .conclusion-screen {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
