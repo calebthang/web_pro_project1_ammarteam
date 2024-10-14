@@ -92,11 +92,12 @@ input[type="radio"] {
 }
 
 .creature {
-    width: 200px;
-    height: 200px;
+    width: 500px;
+    height: 300px;
     margin: 2rem auto;
-    background: url('/api/placeholder/200/200');
+    background: url('creature.gif');
     transition: transform 0.3s;
+    border-radius: 10px;
 }
 
 .creature:hover {
