@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fantasy Forest Adventure</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Radio inputs for navigation -->
+    <input type="radio" id="main-menu" name="screen" checked />
+    <input type="radio" id="story" name="screen" />
+    <input type="radio" id="instructions" name="screen" />
+    <input type="radio" id="settings" name="screen" />
+
+    <input type="radio" id="enter-forest" name="screen">
+    <input type="radio" id="speak-creature" name="screen">
+
+    <!-- Main Menu Screen -->
+    <div class="screen main-menu-screen">
+      <h1 class="game-title">Fantasy Forest</h1>
+      <label for="story" class="btn">Start Game</label>
+      <label for="instructions" class="btn">Instructions</label>
+      <label for="settings" class="btn">Settings</label>
+    </div>
+
+    <!-- Story Screen -->
+    <div class="screen story-screen">
+        <h1 class="game-title">Fantasy Forest</h1>
+        <div class="story-container">
+            <p class="story-text">
+                You find yourself at the edge of a mystical forest. Ancient trees tower above you, their leaves whispering secrets of magic and adventure. An ethereal creature appears before you...
+            </p>
+            <div class="creature"></div>
+            <div class="choices">
+                <label for="enter-forest" class="btn">Enter the Forest</label>
+                <label for="speak-creature" class="btn">Speak to the Creature</label>
+            </div>
+        </div>
+        <label for="main-menu" class="btn">Back to Menu</label>
+    </div>
+
+    <!-- Enter Forest Screen -->
+    <div class="screen enter-forest-screen">
+        <h1 class="game-title">Deep in the Forest</h1>
+        <div class="story-container">
+            <p class="story-text">
+                You step into the forest, and the air immediately feels different. The canopy above filters the sunlight into ethereal beams, creating a magical atmosphere. As you venture deeper, you notice several intriguing paths...
+            </p>
+            <div class="forest-description">
+                <div class="forest-feature">
+                    <h3>Crystal Grove</h3>
+                    <p>A clearing filled with luminescent crystals, pulsing with mysterious energy.</p>
+                </div>
+                <div class="forest-feature">
+                    <h3>Whispering Willows</h3>
+                    <p>Ancient willow trees that seem to murmur ancient secrets in the breeze.</p>
+                </div>
+                <div class="forest-feature">
+                    <h3>Mystic Stream</h3>
+                    <p>A softly glowing stream that flows uphill, defying the laws of nature.</p>
+                </div>
+            </div>
+            <div class="choices">
+                <label class="btn">Explore Crystal Grove</label>
+                <label class="btn">Listen to Willows</label>
+                <label class="btn">Follow the Stream</label>
+            </div>
+        </div>
+        <div class="navigation">
+            <label for="story" class="btn">Go Back</label>
+            <label for="main-menu" class="btn">Back to Menu</label>
+        </div>
+    </div>
+
+    <!-- Speak to Creature Screen -->
+    <div class="screen speak-creature-screen">
+        <h1 class="game-title">The Ethereal Encounter</h1>
+        <div class="story-container">
+            <p class="story-text">
+                As you approach the creature, it turns its luminous gaze upon you. Its form seems to shift and shimmer, never quite settling on a single shape. A gentle voice echoes in your mind...
+            </p>
+            <div class="creature"></div>
+            <div class="creature-dialog">
+                "Greetings, wanderer. I am a Guardian of this realm. What brings you to the edge of the Enchanted Forest? Are you seeking knowledge, adventure, or perhaps... destiny?"
+            </div>
+            <div class="choices">
+                <label class="btn">Seek Knowledge</label>
+                <label class="btn">Ask About Adventure</label>
+                <label class="btn">Inquire About Destiny</label>
+            </div>
+        </div>
+        <div class="navigation">
+            <label for="story" class="btn">Go Back</label>
+            <label for="main-menu" class="btn">Back to Menu</label>
+        </div>
+    </div>
+
+    <!-- Instructions Screen -->
+    <div class="screen instructions-screen">
+      <h1 class="game-title">Instructions</h1>
+      <ul class="instructions-list">
+        <li>
+          Click "Start Game" to begin your adventure in the Fantasy Forest.
+        </li>
+        <li>
+          Read the story carefully and make choices that will affect your
+          journey.
+        </li>
+        <li>Interact with mystical creatures and discover hidden secrets.</li>
+        <li>Use the Settings menu to customize your game experience.</li>
+      </ul>
+      <label for="main-menu" class="btn">Back to Menu</label>
+    </div>
+
+    <!-- Settings Screen -->
+    <div class="screen settings-screen">
+      <h1 class="game-title">Settings</h1>
+      <div class="settings-option">
+        <h2>Audio Settings</h2>
+        <div class="audio-player">
+          <span class="audio-label">Background Music</span>
+          <audio controls loop>
+            <source src="bgmusic.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div class="volume-control">
+          <span class="audio-label">Volume</span>
+          <input
+            type="range"
+            class="volume-slider"
+            min="0"
+            max="100"
+            value="50"
+          />
+          <div class="mute-toggle">
+            <span class="audio-label">Mute Music</span>
+            <input type="checkbox" id="mute-toggle" class="mute-checkbox" />
+            <label for="mute-toggle" class="mute-label"></label>
+          </div>
+        </div>
+      </div>
+      <div class="settings-option">
+        <h2>Theme Color</h2>
+        <div class="theme-buttons">
+          <div class="theme-btn light"></div>
+          <div class="theme-btn dark"></div>
+          <div class="theme-btn forest"></div>
+        </div>
+      </div>
+      <label for="main-menu" class="btn">Back to Menu</label>
+    </div>
+  </body>
+</html>
