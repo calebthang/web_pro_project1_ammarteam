@@ -13,8 +13,13 @@
     <input type="radio" id="instructions" name="screen" />
     <input type="radio" id="settings" name="screen" />
 
-    <input type="radio" id="enter-forest" name="screen">
-    <input type="radio" id="speak-creature" name="screen">
+    <input type="radio" id="enter-forest" name="screen" />
+    <input type="radio" id="speak-creature" name="screen" />
+
+    <input type="radio" id="crystal-grove" name="screen" />
+    <input type="radio" id="whispering-willows" name="screen" />
+    <input type="radio" id="mystic-stream" name="screen" />
+    <input type="radio" id="conclusion" name="screen" />
 
     <!-- Main Menu Screen -->
     <div class="screen main-menu-screen">
@@ -26,74 +31,268 @@
 
     <!-- Story Screen -->
     <div class="screen story-screen">
-        <h1 class="game-title">Fantasy Forest</h1>
-        <div class="story-container">
-            <p class="story-text">
-                You find yourself at the edge of a mystical forest. Ancient trees tower above you, their leaves whispering secrets of magic and adventure. An ethereal creature appears before you...
-            </p>
-            <div class="creature"></div>
-            <div class="choices">
-                <label for="enter-forest" class="btn">Enter the Forest</label>
-                <label for="speak-creature" class="btn">Speak to the Creature</label>
-            </div>
+      <h1 class="game-title">Fantasy Forest</h1>
+      <div class="story-container">
+        <p class="story-text">
+          You find yourself at the edge of a mystical forest. Ancient trees
+          tower above you, their leaves whispering secrets of magic and
+          adventure. An ethereal creature appears before you...
+        </p>
+        <div class="creature"></div>
+        <div class="choices">
+          <label for="enter-forest" class="btn">Enter the Forest</label>
+          <label for="speak-creature" class="btn">Speak to the Creature</label>
         </div>
-        <label for="main-menu" class="btn">Back to Menu</label>
+      </div>
+      <label for="main-menu" class="btn">Back to Menu</label>
     </div>
 
     <!-- Enter Forest Screen -->
     <div class="screen enter-forest-screen">
-        <h1 class="game-title">Deep in the Forest</h1>
-        <div class="story-container">
-            <p class="story-text">
-                You step into the forest, and the air immediately feels different. The canopy above filters the sunlight into ethereal beams, creating a magical atmosphere. As you venture deeper, you notice several intriguing paths...
+      <h1 class="game-title">Deep in the Forest</h1>
+      <div class="story-container">
+        <p class="story-text">
+          You step into the forest, and the air immediately feels different. The
+          canopy above filters the sunlight into ethereal beams, creating a
+          magical atmosphere. As you venture deeper, you notice several
+          intriguing paths...
+        </p>
+        <div class="forest-description">
+          <div class="forest-feature">
+            <h3>Crystal Grove</h3>
+            <p>
+              A clearing filled with luminescent crystals, pulsing with
+              mysterious energy.
             </p>
-            <div class="forest-description">
-                <div class="forest-feature">
-                    <h3>Crystal Grove</h3>
-                    <p>A clearing filled with luminescent crystals, pulsing with mysterious energy.</p>
-                </div>
-                <div class="forest-feature">
-                    <h3>Whispering Willows</h3>
-                    <p>Ancient willow trees that seem to murmur ancient secrets in the breeze.</p>
-                </div>
-                <div class="forest-feature">
-                    <h3>Mystic Stream</h3>
-                    <p>A softly glowing stream that flows uphill, defying the laws of nature.</p>
-                </div>
-            </div>
-            <div class="choices">
-                <label class="btn">Explore Crystal Grove</label>
-                <label class="btn">Listen to Willows</label>
-                <label class="btn">Follow the Stream</label>
-            </div>
+          </div>
+          <div class="forest-feature">
+            <h3>Whispering Willows</h3>
+            <p>
+              Ancient willow trees that seem to murmur ancient secrets in the
+              breeze.
+            </p>
+          </div>
+          <div class="forest-feature">
+            <h3>Mystic Stream</h3>
+            <p>
+              A softly glowing stream that flows uphill, defying the laws of
+              nature.
+            </p>
+          </div>
         </div>
-        <div class="navigation">
-            <label for="story" class="btn">Go Back</label>
-            <label for="main-menu" class="btn">Back to Menu</label>
+        <div class="choices">
+          <label for="crystal-grove" class="btn">Explore Crystal Grove</label>
+          <label for="whispering-willows" class="btn">Listen to Willows</label>
+          <label for="mystic-stream" class="btn">Follow the Stream</label>
         </div>
+      </div>
+      <div class="navigation">
+        <label for="story" class="btn">Go Back</label>
+        <label for="main-menu" class="btn">Back to Menu</label>
+      </div>
+    </div>
+
+    <!-- Crystal Grove Screen -->
+    <div class="screen crystal-grove-screen">
+      <h1 class="game-title">The Crystal Grove</h1>
+      <div class="story-container">
+        <p class="story-text">
+          You enter a clearing bathed in an otherworldly glow. Crystals of
+          various sizes and colors protrude from the ground, each pulsing with
+          its own rhythm of light. The air hums with magical energy.
+        </p>
+        <div class="forest-scene">
+          <p>
+            As you explore, you notice three crystals that seem particularly
+            significant:
+          </p>
+          <div class="magic-item">
+            <h3>Crimson Crystal</h3>
+            <p>A deep red crystal that seems to radiate warmth and power.</p>
+          </div>
+          <div class="magic-item">
+            <h3>Azure Crystal</h3>
+            <p>
+              A blue crystal that shimmers with an aura of wisdom and
+              tranquility.
+            </p>
+          </div>
+          <div class="magic-item">
+            <h3>Emerald Crystal</h3>
+            <p>A green crystal that pulses with life and vitality.</p>
+          </div>
+        </div>
+        <p class="story-text">
+          You feel drawn to touch one of the crystals, sensing that your choice
+          will shape your journey ahead.
+        </p>
+        <div class="choices">
+          <label for="conclusion" class="btn">Touch the Crimson Crystal</label>
+          <label for="conclusion" class="btn">Touch the Azure Crystal</label>
+          <label for="conclusion" class="btn">Touch the Emerald Crystal</label>
+        </div>
+      </div>
+      <div class="navigation">
+        <label for="enter-forest" class="btn">Go Back</label>
+        <label for="main-menu" class="btn">Back to Menu</label>
+      </div>
+    </div>
+
+    <!-- Whispering Willows Screen -->
+    <div class="screen whispering-willows-screen">
+      <h1 class="game-title">The Whispering Willows</h1>
+      <div class="story-container">
+        <p class="story-text">
+          You approach a grove of ancient willow trees. Their long, flowing
+          branches sway gently in a breeze you can't feel. As you draw closer,
+          you begin to hear whispers carried on the wind.
+        </p>
+        <div class="forest-scene">
+          <p>The whispers seem to be coming from three distinct trees:</p>
+          <div class="magic-item">
+            <h3>The Elder Willow</h3>
+            <p>
+              Its bark is gnarled and ancient, whispering of forgotten
+              histories.
+            </p>
+          </div>
+          <div class="magic-item">
+            <h3>The Dreaming Willow</h3>
+            <p>
+              Its leaves shimmer with an iridescent glow, murmuring of possible
+              futures.
+            </p>
+          </div>
+          <div class="magic-item">
+            <h3>The Twilight Willow</h3>
+            <p>
+              Half of its branches are verdant, half bare, speaking of balance
+              and cycles.
+            </p>
+          </div>
+        </div>
+        <p class="story-text">
+          You feel compelled to place your hand on one of the trees, knowing
+          that its whispers will guide your path.
+        </p>
+        <div class="choices">
+          <label for="conclusion" class="btn">Touch the Elder Willow</label>
+          <label for="conclusion" class="btn">Touch the Dreaming Willow</label>
+          <label for="conclusion" class="btn">Touch the Twilight Willow</label>
+        </div>
+      </div>
+      <div class="navigation">
+        <label for="enter-forest" class="btn">Go Back</label>
+        <label for="main-menu" class="btn">Back to Menu</label>
+      </div>
+    </div>
+
+    <!-- Mystic Stream Screen -->
+    <div class="screen mystic-stream-screen">
+      <h1 class="game-title">The Mystic Stream</h1>
+      <div class="story-container">
+        <p class="story-text">
+          You come upon a stream that defies nature, its crystalline waters
+          flowing gently uphill. The stream splits into three branches, each
+          glowing with a different hue.
+        </p>
+        <div class="forest-scene">
+          <p>You notice three distinct paths the stream takes:</p>
+          <div class="magic-item">
+            <h3>The Golden Stream</h3>
+            <p>
+              Its waters shimmer like liquid gold, promising prosperity and
+              fortune.
+            </p>
+          </div>
+          <div class="magic-item">
+            <h3>The Silver Stream</h3>
+            <p>
+              Its waters gleam like moonlight, hinting at hidden knowledge and
+              secrets.
+            </p>
+          </div>
+          <div class="magic-item">
+            <h3>The Rainbow Stream</h3>
+            <p>
+              Its waters shift through all colors, suggesting transformation and
+              possibility.
+            </p>
+          </div>
+        </div>
+        <p class="story-text">
+          You feel an urge to step into one of the streams, sensing that its
+          waters will carry you to your destiny.
+        </p>
+        <div class="choices">
+          <label for="conclusion" class="btn"
+            >Step into the Golden Stream</label
+          >
+          <label for="conclusion" class="btn"
+            >Step into the Silver Stream</label
+          >
+          <label for="conclusion" class="btn"
+            >Step into the Rainbow Stream</label
+          >
+        </div>
+      </div>
+      <div class="navigation">
+        <label for="enter-forest" class="btn">Go Back</label>
+        <label for="main-menu" class="btn">Back to Menu</label>
+      </div>
+    </div>
+
+    <!-- Conclusion Screen -->
+    <div class="screen conclusion-screen">
+      <h1 class="game-title">Your Fantasy Forest Journey</h1>
+      <div class="conclusion">
+        <h2>The Path You've Chosen</h2>
+        <p>
+          As you make your final choice, the forest around you shimmers and
+          transforms. You feel the magic of the Fantasy Forest coursing through
+          you, forever changing your destiny.
+        </p>
+        <p>
+          Your journey through the Crystal Grove, Whispering Willows, or Mystic
+          Stream has granted you unique insights and powers. The path you've
+          chosen will continue to shape your adventures in ways yet unseen.
+        </p>
+        <p>
+          Remember, brave adventurer, that the magic of the Fantasy Forest now
+          lives within you. Carry its wonder and mystery with you always.
+        </p>
+        <h2>The End... or is it just the Beginning?</h2>
+      </div>
+      <div class="navigation">
+        <label for="main-menu" class="btn">Return to Main Menu</label>
+      </div>
     </div>
 
     <!-- Speak to Creature Screen -->
     <div class="screen speak-creature-screen">
-        <h1 class="game-title">The Ethereal Encounter</h1>
-        <div class="story-container">
-            <p class="story-text">
-                As you approach the creature, it turns its luminous gaze upon you. Its form seems to shift and shimmer, never quite settling on a single shape. A gentle voice echoes in your mind...
-            </p>
-            <div class="creature"></div>
-            <div class="creature-dialog">
-                "Greetings, wanderer. I am a Guardian of this realm. What brings you to the edge of the Enchanted Forest? Are you seeking knowledge, adventure, or perhaps... destiny?"
-            </div>
-            <div class="choices">
-                <label class="btn">Seek Knowledge</label>
-                <label class="btn">Ask About Adventure</label>
-                <label class="btn">Inquire About Destiny</label>
-            </div>
+      <h1 class="game-title">The Ethereal Encounter</h1>
+      <div class="story-container">
+        <p class="story-text">
+          As you approach the creature, it turns its luminous gaze upon you. Its
+          form seems to shift and shimmer, never quite settling on a single
+          shape. A gentle voice echoes in your mind...
+        </p>
+        <div class="creature"></div>
+        <div class="creature-dialog">
+          "Greetings, wanderer. I am a Guardian of this realm. What brings you
+          to the edge of the Enchanted Forest? Are you seeking knowledge,
+          adventure, or perhaps... destiny?"
         </div>
-        <div class="navigation">
-            <label for="story" class="btn">Go Back</label>
-            <label for="main-menu" class="btn">Back to Menu</label>
+        <div class="choices">
+          <label class="btn">Seek Knowledge</label>
+          <label class="btn">Ask About Adventure</label>
+          <label class="btn">Inquire About Destiny</label>
         </div>
+      </div>
+      <div class="navigation">
+        <label for="story" class="btn">Go Back</label>
+        <label for="main-menu" class="btn">Back to Menu</label>
+      </div>
     </div>
 
     <!-- Instructions Screen -->
