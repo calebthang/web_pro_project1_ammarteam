@@ -24,15 +24,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 20px;
     background: linear-gradient(135deg, #1a1a1a, #2a1f3d);
+    overflow-y: auto;
 }
 
 #main-menu:checked ~ .main-menu-screen,
 #story:checked ~ .story-screen,
 #instructions:checked ~ .instructions-screen,
-#settings:checked ~ .settings-screen {
+#settings:checked ~ .settings-screen,
+#enter-forest:checked ~ .enter-forest-screen,
+#speak-creature:checked ~ .speak-creature-screen,
+#crystal-grove:checked ~ .crystal-grove-screen,
+#whispering-willows:checked ~ .whispering-willows-screen,
+#mystic-stream:checked ~ .mystic-stream-screen,
+#conclusion:checked ~ .conclusion-screen {
     opacity: 1;
     visibility: visible;
     z-index: 1;
@@ -47,8 +54,9 @@ input[type="radio"] {
     font-size: 3rem;
     color: #9f7aea;
     text-shadow: 0 0 10px #9f7aea;
-    margin-bottom: 2rem;
+    margin: 1rem 0;
     animation: glow 2s ease-in-out infinite alternate;
+    text-align: center;
 }
 
 @keyframes glow {
@@ -59,25 +67,31 @@ input[type="radio"] {
 .btn {
     font-family: 'MedievalSharp', cursive;
     font-size: 1.2rem;
-    padding: 10px 20px;
+    padding: 12px 24px;
     margin: 10px;
-    background: transparent;
+    background: #9f7aea;
     border: 2px solid #9f7aea;
-    color: #9f7aea;
+    color: #1a1a1a;
     cursor: pointer;
     transition: all 0.3s;
     text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
-    background: #9f7aea;
-    color: #1a1a1a;
-    transform: scale(1.05);
+    background: transparent;
+    color: #9f7aea;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.story-container {
+.story-container, .conclusion {
     max-width: 800px;
+    width: 100%;
     text-align: center;
+    margin: 0 auto;
 }
 
 .story-text {
@@ -92,16 +106,13 @@ input[type="radio"] {
 }
 
 .creature {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height: 300px;
     margin: 2rem auto;
-    background: url('creature.gif');
+    background: url('creature.gif') center/cover no-repeat;
     transition: transform 0.3s;
     border-radius: 10px;
-}
-
-.creature:hover {
-    transform: scale(1.1) rotate(5deg);
 }
 
 .choices {
@@ -109,11 +120,13 @@ input[type="radio"] {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 .instructions-list {
     max-width: 600px;
     text-align: left;
+    margin: 0 auto;
 }
 
 .instructions-list li {
@@ -142,6 +155,7 @@ input[type="radio"] {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+    justify-content: center;
 }
 
 .theme-btn {
@@ -161,35 +175,14 @@ input[type="radio"] {
 .dark { background: #1a1a1a; }
 .forest { background: #2d5a27; }
 
-/* Audio Player Styles */
-.audio-player {
-    margin-bottom: 1rem;
+.audio-player, .volume-control {
     width: 100%;
     max-width: 300px;
+    margin: 1rem auto;
 }
 
 .audio-player audio {
     width: 100%;
-}
-
-audio::-webkit-media-controls-panel {
-    background-color: #4a3670;
-}
-
-audio::-webkit-media-controls-play-button {
-    background-color: #9f7aea;
-    border-radius: 50%;
-}
-
-audio::-webkit-media-controls-current-time-display,
-audio::-webkit-media-controls-time-remaining-display {
-    color: #9f7aea;
-}
-
-.volume-control {
-    width: 100%;
-    max-width: 300px;
-    margin-top: 1rem;
 }
 
 .volume-slider {
@@ -210,10 +203,6 @@ audio::-webkit-media-controls-time-remaining-display {
     background: #9f7aea;
     cursor: pointer;
     transition: transform 0.3s;
-}
-
-.volume-slider::-webkit-slider-thumb:hover {
-    transform: scale(1.2);
 }
 
 .audio-label {
@@ -265,51 +254,60 @@ audio::-webkit-media-controls-time-remaining-display {
     transform: translateX(30px);
 }
 
-
 .creature-dialog {
-            background: rgba(159, 122, 234, 0.1);
-            border: 1px solid #9f7aea;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            max-width: 600px;
-            position: relative;
-        }
+    background: rgba(159, 122, 234, 0.1);
+    border: 1px solid #9f7aea;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    max-width: 600px;
+    position: relative;
+}
 
 .creature-dialog::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 10px solid #9f7aea;
-        }
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #9f7aea;
+}
 
-.forest-description {
-            text-align: left;
-            margin-bottom: 20px;
-        }
+.forest-description, .forest-scene {
+    text-align: left;
+    margin-bottom: 20px;
+    background: rgba(159, 122, 234, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+}
 
-.forest-feature {
-            display: inline-block;
-            margin: 10px;
-            padding: 15px;
-            border: 1px solid #9f7aea;
-            border-radius: 5px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-.forest-feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(159, 122, 234, 0.3);
-        }
+.forest-feature, .magic-item {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #9f7aea;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-        /* Extend the checkbox hack for new screens */
-#enter-forest:checked ~ .enter-forest-screen,
-#speak-creature:checked ~ .speak-creature-screen {
-            opacity: 1;
-            visibility: visible;
-            z-index: 1;
+.forest-feature:hover, .magic-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(159, 122, 234, 0.3);
+}
+
+.conclusion {
+    padding: 30px;
+    background: rgba(159, 122, 234, 0.2);
+    border-radius: 15px;
+}
+
+.conclusion h2 {
+    font-family: 'MedievalSharp', cursive;
+    color: #9f7aea;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
@@ -319,58 +317,37 @@ audio::-webkit-media-controls-time-remaining-display {
 
     .btn {
         font-size: 1rem;
-        padding: 8px 16px;
+        padding: 10px 20px;
     }
 
     .story-text {
         font-size: 1rem;
     }
+
+    .creature {
+        height: 200px;
+    }
+
+    .forest-feature, .magic-item {
+        width: calc(50% - 20px);
+    }
 }
 
-.forest-scene {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: rgba(159, 122, 234, 0.1);
-    border-radius: 10px;
-    text-align: left;
-}
+@media (max-width: 480px) {
+    .game-title {
+        font-size: 1.5rem;
+    }
 
-.magic-item {
-    display: inline-block;
-    margin: 10px;
-    padding: 15px;
-    border: 1px solid #9f7aea;
-    border-radius: 5px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
 
-.magic-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(159, 122, 234, 0.3);
-}
+    .story-text {
+        font-size: 0.9rem;
+    }
 
-.conclusion {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 30px;
-    background: rgba(159, 122, 234, 0.2);
-    border-radius: 15px;
-    text-align: center;
-}
-
-.conclusion h2 {
-    font-family: 'MedievalSharp', cursive;
-    color: #9f7aea;
-    margin-bottom: 20px;
-}
-
-/* Extend the checkbox hack for new screens */
-#crystal-grove:checked ~ .crystal-grove-screen,
-#whispering-willows:checked ~ .whispering-willows-screen,
-#mystic-stream:checked ~ .mystic-stream-screen,
-#conclusion:checked ~ .conclusion-screen {
-    opacity: 1;
-    visibility: visible;
-    z-index: 1;
+    .forest-feature, .magic-item {
+        width: 100%;
+    }
 }
