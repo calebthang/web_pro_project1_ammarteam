@@ -44,6 +44,13 @@ body {
     visibility: visible;
     z-index: 1;
 }
+#seek-knowledge:checked ~ .seek-knowledge-screen,
+#ask-adventure:checked ~ .ask-adventure-screen,
+#inquire-destiny:checked ~ .inquire-destiny-screen {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
 
 input[type="radio"] {
     display: none;

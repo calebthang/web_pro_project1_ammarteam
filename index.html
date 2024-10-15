@@ -21,6 +21,10 @@
     <input type="radio" id="mystic-stream" name="screen" />
     <input type="radio" id="conclusion" name="screen" />
 
+    <input type="radio" id="seek-knowledge" name="screen" />
+    <input type="radio" id="ask-adventure" name="screen" />
+    <input type="radio" id="inquire-destiny" name="screen" />
+
     <!-- Main Menu Screen -->
     <div class="screen main-menu-screen">
       <h1 class="game-title">Fantasy Forest</h1>
@@ -284,14 +288,112 @@
           adventure, or perhaps... destiny?"
         </div>
         <div class="choices">
-          <label class="btn">Seek Knowledge</label>
-          <label class="btn">Ask About Adventure</label>
-          <label class="btn">Inquire About Destiny</label>
+          <label for="seek-knowledge" class="btn">Seek Knowledge</label>
+          <label for="ask-adventure" class="btn">Ask About Adventure</label>
+          <label for="inquire-destiny" class="btn">Inquire About Destiny</label>
         </div>
       </div>
       <div class="navigation">
         <label for="story" class="btn">Go Back</label>
         <label for="main-menu" class="btn">Back to Menu</label>
+      </div>
+    </div>
+
+    <!-- Seek Knowledge Screen -->
+    <div class="screen seek-knowledge-screen">
+      <h1 class="game-title">The Wisdom of the Forest</h1>
+      <div class="story-container">
+        <p class="story-text">
+          The creature's eyes gleam with an ancient light as you express your
+          desire for knowledge.
+        </p>
+        <div class="creature-dialog">
+          "Ah, a seeker of wisdom! The forest holds many secrets. In the heart
+          of the Crystal Grove lies an ancient library, guarded by the spirits
+          of scholars past. There, you may find the knowledge you seek. But
+          beware, for not all truths are easy to bear."
+        </div>
+        <p class="story-text">
+          The creature gestures towards a shimmering path that wasn't there
+          before. It seems to lead deep into the forest, towards a glow of
+          crystalline light.
+        </p>
+        <div class="choices">
+          <label for="conclusion" class="btn"
+            >Follow the Path to the Library</label
+          >
+          <label for="conclusion" class="btn">Ask About the Spirits</label>
+        </div>
+      </div>
+      <div class="navigation">
+        <label for="speak-creature" class="btn">Go Back</label>
+        <label for="main-menu" class="btn">Back to Home</label>
+      </div>
+    </div>
+
+    <!-- Ask About Adventure Screen -->
+    <div class="screen ask-adventure-screen">
+      <h1 class="game-title">The Call to Adventure</h1>
+      <div class="story-container">
+        <p class="story-text">
+          The creature's form shifts, taking on a more dynamic appearance as you
+          inquire about adventure.
+        </p>
+        <div class="creature-dialog">
+          "A brave soul, indeed! The Enchanted Forest is teeming with wonders
+          and dangers alike. To the north lies the Whispering Willows, where
+          ancient trees guard powerful artifacts. To the east, the Mystic Stream
+          leads to realms beyond imagination. Choose your path wisely, for each
+          adventure will test your courage and wit."
+        </div>
+        <p class="story-text">
+          As the creature speaks, you feel a surge of excitement. Two distinct
+          paths materialize before you, each pulsing with magical energy.
+        </p>
+        <div class="choices">
+          <label for="conclusion" class="btn"
+            >Journey to Whispering Willows</label
+          >
+          <label for="conclusion" class="btn">Follow the Mystic Stream</label>
+        </div>
+      </div>
+      <div class="navigation">
+        <label for="speak-creature" class="btn">Go Back</label>
+        <label for="main-menu" class="btn">Back to Home</label>
+      </div>
+    </div>
+
+    <!-- Inquire About Destiny Screen -->
+    <div class="screen inquire-destiny-screen">
+      <h1 class="game-title">The Threads of Fate</h1>
+      <div class="story-container">
+        <p class="story-text">
+          As you mention destiny, the creature's form becomes more ethereal,
+          stars seeming to swirl within its being.
+        </p>
+        <div class="creature-dialog">
+          "Destiny is a complex tapestry, young one. In the heart of this forest
+          lies the Nexus of Possibilities, where the threads of fate intertwine.
+          There, you might glimpse your potential futures. But remember, destiny
+          is not set in stone - it is shaped by the choices you make."
+        </div>
+        <p class="story-text">
+          The air around you shimmers, and you see fleeting images of possible
+          futures - some filled with glory, others with challenges, all
+          intriguing.
+        </p>
+        <div class="choices">
+          <label for="conclusion" class="btn"
+            >Seek the Nexus of Possibilities</label
+          >
+          <label for="conclusion" class="btn"
+            >Ask About Shaping Your Own Destiny</label
+          >
+        </div>
+      </div>
+      <div class="navigation">
+        <label for="speak-creature" class="btn">Go Back</label>
+        <label for="main-menu" class="btn">Back to Home</label>
       </div>
     </div>
 
