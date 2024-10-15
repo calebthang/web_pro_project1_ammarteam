@@ -115,6 +115,10 @@ input[type="radio"] {
     border-radius: 10px;
 }
 
+.creature:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
 .choices {
     display: flex;
     flex-wrap: wrap;
